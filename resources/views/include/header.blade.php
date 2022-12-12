@@ -1,7 +1,7 @@
 <Nav>
         
         <div class="logo">
-            <img src="" alt="A1-cares">
+            <img src="{{asset('img/a1-care-logo.png')}}" alt="A1-cares">
             <button class="menu"><i class="ri-menu-line"></i></button>
         </div>
 

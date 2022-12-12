@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -12,9 +13,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
-        //
+        $product = Product::where('slug', $slug)->get();
+
+        return view('product')->with('product', $product);
     }
 
     /**
@@ -24,7 +27,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin/create');
+        if(Auth::check())
+        {
+            return view('admin/create');
+        }
+
+        return redirect('admin/login')->with('success', 'you are not allowed to access');
+        
     }
 
     /**
@@ -35,7 +44,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return "Hello";
+        // $request->validate([
+        //     // 'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     'price' => 'numeric|min:1|max:9',
+        // ]);
+        $imageName = time().'.'.$request->photo->extension();  
+        $request->photo->move(public_path('img'), $imageName);
+
+        $slug = strtolower(str_replace(' ', '-', $request->slug));
+        $product = Product::create([
+            'name' => $request->name,
+            'slug' => $slug,
+            'page-title' => $request->page_title,
+            'description' => $request->description,
+            'photo' => $imageName,
+            'price' => $request->price,
+        ]);
+        return redirect('product/'.$slug); 
     }
 
     /**
