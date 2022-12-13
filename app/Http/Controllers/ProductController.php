@@ -57,7 +57,7 @@ class ProductController extends Controller
             'slug' => $slug,
             'page-title' => $request->page_title,
             'description' => $request->description,
-            'photo' => $imageName,
+            'photo' => $request->photo->hashName(),
             'price' => $request->price,
         ]);
         return redirect('product/'.$slug); 

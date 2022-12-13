@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="body d-flex py-3">
-        <div class="container col-6">
+        <div class="container col-xl-6">
             <div class="row align-items-center">
                 <div class="border-0 mb-4">
                     <div
