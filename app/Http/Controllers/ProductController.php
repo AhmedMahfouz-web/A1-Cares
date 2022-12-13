@@ -49,7 +49,7 @@ class ProductController extends Controller
         //     'price' => 'numeric|min:1|max:9',
         // ]);
         $imageName = time().'.'.$request->photo->extension();  
-        $request->photo->move(public_path('img'), $imageName);
+        $request->photo->store('/', 'public');
 
         $slug = strtolower(str_replace(' ', '-', $request->slug));
         $product = Product::create([
