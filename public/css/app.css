@@ -1,0 +1,363 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    z-index: -10;
+    font-family: Helvetica, Sans-Serif;
+}
+
+nav {
+    width: 100%;
+    background: white;
+    max-width: 1250px;
+    padding: 25px;
+    position: relative;
+    margin: auto;
+}
+
+nav .logo{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+nav .logo img{
+    width: 200px;
+}
+
+nav .logo .menu{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 16px;
+}
+
+nav .nav{
+    padding: 10px 0 20px;
+    position: absolute;
+    top: -150%;
+    transition: 0.5s;
+    z-index: -1;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
+
+nav .nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav .nav ul li{
+    margin: 10px;
+}
+
+nav .nav .search{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+nav .nav .search i{
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+nav .nav .search input{
+    height: 25px;
+    padding-left: 25px;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+.landing{
+    z-index: -2;
+    position: relative;
+}
+
+.landing .img img{
+    width: 100%;
+}
+
+.landing .description{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.landing .description .sentence{
+    font-size: 20px;
+}
+
+
+.landing .description .name{
+    font-size: 30px;
+}
+
+.landing .description button{
+    padding: 10px 30px;
+    background: none;
+    font-size: 12px;
+    border: 1px solid black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.landing .description button:hover{
+    color:white;
+    background-color: rgb(12, 12, 12);
+    border: 1px solid white
+}
+
+footer{
+    
+    background: rgb(49, 49, 49);
+    width: 100%
+}
+
+.footer img{
+    max-width: 150px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(49, 49, 49);
+    padding: 20px 0 40px;
+    gap: 20px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.footer div{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.footer div ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgb(94, 94, 94);
+}
+
+.footer div ul li{
+    margin: 10px;
+}
+
+.footer div:first-child ul{
+    width: 100%;
+}
+
+.footer div:first-child ul li{
+    margin: 0px;
+    padding: 0;
+}
+
+.footer div p{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+@media only screen and (min-width: 768px){
+    
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav .logo{
+        width: 40%;
+        text-align: left;
+    }
+
+
+    nav .logo .menu{
+        display: none;
+        position: unset;
+        right: 0;
+        top: 0;
+        transform: translateY(0);
+    }
+
+    nav .nav{
+        padding: 0 ;
+        position: unset;
+        top: 0;
+        z-index: 1;
+        background-color: white;
+        text-align: unset;
+        width: 60%;
+        display : flex;
+    }
+
+    nav .nav ul{
+        display: inline-block;
+        width: 50%;
+    }
+
+    nav .nav ul li{
+        display: inline-block;
+        margin: 10px;
+    }
+    nav .nav .search{
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .landing .description{
+        padding: 20px 0 50px;
+    }
+
+    .landing .description .sentence{
+        font-size: 24px;
+    }
+
+
+    .landing .description .name{
+        font-size: 36px;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background: rgb(49, 49, 49);
+        padding: 20px 0 40px;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .footer div{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+    }
+
+    .footer div ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: rgb(94, 94, 94);
+    }
+
+
+}
+
+@media only screen and (min-width: 1024px){
+    body{
+        min-height: 105vh;
+        padding-bottom: 280px;
+    }
+
+    nav .nav{
+        width: 40%
+    }
+
+    .landing{
+     padding: 50px 0;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        max-width: 1250px;
+        margin :0 auto;
+    }
+
+    .landing .img{
+        width: 60%;
+    }
+    
+    
+    .landing .description{
+        width: 40%;
+        text-align: left;
+        padding: 20px;
+    }
+    
+    .landing .description .sentence{
+        font-size: 20px;
+    }
+    
+    
+    .landing .description .name{
+        font-size: 30px;
+    }
+    
+    .landing .description button{
+        padding: 10px 30px;
+        background: none;
+        font-size: 12px;
+        border: 1px solid black
+    }
+
+    
+
+    footer{
+        position: absolute;
+        bottom: 0%;
+        
+        background: rgb(49, 49, 49);
+    }
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0 40px;
+        gap: 30px;
+        flex-wrap: wrap;
+        
+    }
+
+    .footer div{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+    }
+
+    .footer div p{
+        font-size: 16px;
+    }
+
+    .footer div ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: rgb(94, 94, 94);
+    }
+
+    .footer div ul li{
+        margin: 10px 0;
+        font-size: 14px;
+        text-align: left;
+    }
+}
