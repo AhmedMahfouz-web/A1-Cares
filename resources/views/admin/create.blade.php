@@ -1,5 +1,10 @@
 @extends('layout.admin-layout')
 
+@section('css')
+<link href="{{asset("node_modules/froala-editor/css/froala_editor.pkgd.min.css")}}" rel="stylesheet" type="text/css" />    
+
+@endsection
+
 @section('content')
     <div class="body d-flex py-3">
         <div class="container col-xl-6">
@@ -51,7 +56,8 @@
                                     <div class="col-md-12">
                                         <label class="form-label">Product Description</label>
                                         <textarea required name="description" class="form-control"
-                                            id="exampleFormControlTextarea3" rows="7"></textarea>
+                                            id="froala" rows="7"></textarea>
+                                            {{-- <div id="froala" name="description"></div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +71,24 @@
                                     <div class="input-group mb-3">
                                       <input type="number" class="form-control" name="price" required>
                                       <span class="input-group-text">EGP</span>
-                                  </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputImage2">Image:</label>
+                                        <input type="file" name="product_image[1]" id="inputImage2"
+                                            class="form-control ">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputImage3">Image:</label>
+                                        <input type="file" name="product_image[2]" id="inputImage3"
+                                            class="form-control ">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputImage4">Image:</label>
+                                        <input type="file" name="product_image[3]" id="inputImage4"
+                                            class="form-control ">
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -279,4 +302,17 @@
 
     </fieldset>
     </form> --}}
+@endsection
+
+@section('js')
+<script type="text/javascript" src="{{asset("node_modules/froala-editor/js/froala_editor.pkgd.min.js")}}"></script>
+<script>
+    const editor = new FroalaEditor('#froala', {
+        imageUpload: false,
+        imageManagerToggleTags: false,
+        fileUpload: false,
+        quickInsertEnabled: false,
+        imageInsertButtons: [''],
+    });
+</script>
 @endsection

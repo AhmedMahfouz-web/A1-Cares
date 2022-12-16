@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index($slug)
     {
-        $product = Product::where('slug', $slug)->get();
+        $product = Product::where('slug', $slug)->with('image')->get();
 
         return view('product')->with('product', $product);
     }
