@@ -63,7 +63,7 @@ class ProductController extends Controller
         ]);
 
         if($request->file('product_image')){
-            foreach ($request->file('product_image') as $image) {
+            foreach ($request->product_image as $image) {
                 $image->store('/', 'public');
                 ProductImage::create([
                     'photo' => $image,
