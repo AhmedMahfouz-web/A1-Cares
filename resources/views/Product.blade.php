@@ -51,7 +51,7 @@
                   </div>
                   @foreach ($product->image as $image)
                   <div class="carousel-item" data-bs-interval="2000">
-                    <img src="{{asset("img/" . $image)}}" class="d-block w-100" alt="...">
+                    <img src="{{asset("img/" . $image->photo)}}" class="d-block w-100" alt="...">
                   </div>                      
                   @endforeach
                 </div>

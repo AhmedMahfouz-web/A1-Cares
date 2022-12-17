@@ -66,7 +66,7 @@ class ProductController extends Controller
             foreach ($request->product_image as $image) {
                 $image->store('/', 'public');
                 ProductImage::create([
-                    'photo' => $image,
+                    'photo' => $image->hashName(),
                     'product_id' => $product->id
                 ]);
             };
