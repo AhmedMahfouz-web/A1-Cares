@@ -41,7 +41,7 @@
                   </button>
                   @foreach ($product->image as $image)
                   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2">
-                    <img src="{{asset("img/" . $image)}}" alt="">
+                    <img src="{{asset("img/" . $image->photo)}}" alt="">
                   </button>
                   @endforeach
                 </div>
