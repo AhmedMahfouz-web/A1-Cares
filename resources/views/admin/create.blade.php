@@ -56,7 +56,7 @@
                                     <div class="col-md-12">
                                         <label class="form-label">Product Description</label>
                                         <textarea required name="description" class="form-control"
-                                            id="froala" rows="7"></textarea>
+                                            id="froala" ></textarea>
                                             {{-- <div id="froala" name="description"></div> --}}
                                     </div>
                                 </div>
@@ -74,19 +74,19 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputImage2">Image:</label>
-                                        <input type="file" name="product_image[1]" id="inputImage2"
+                                        <input type="file" name="product_image[]" id="inputImage2"
                                             class="form-control ">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputImage3">Image:</label>
-                                        <input type="file" name="product_image[2]" id="inputImage3"
+                                        <input type="file" name="product_image[]" id="inputImage3"
                                             class="form-control ">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label" for="inputImage4">Image:</label>
-                                        <input type="file" name="product_image[3]" id="inputImage4"
+                                        <input type="file" name="product_image[]" id="inputImage4"
                                             class="form-control ">
                                     </div>
                                 </div>
@@ -308,6 +308,7 @@
 <script type="text/javascript" src="{{asset("node_modules/froala-editor/js/froala_editor.pkgd.min.js")}}"></script>
 <script>
     const editor = new FroalaEditor('#froala', {
+        toolbarInline: false,
         imageUpload: false,
         imageManagerToggleTags: false,
         fileUpload: false,

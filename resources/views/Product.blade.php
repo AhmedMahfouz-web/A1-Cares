@@ -39,23 +39,21 @@
                   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
                     <img src="{{asset("img/" . $product->photo)}}" alt="">
                   </button>
+                  @foreach ($product->image as $image)
                   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2">
-
+                    <img src="{{asset("img/" . $image)}}" alt="">
                   </button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3">
-
-                  </button>
+                  @endforeach
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
                     <img src="{{asset("img/" . $product->photo)}}" class="d-block w-100" alt="...">
                   </div>
+                  @foreach ($product->image as $image)
                   <div class="carousel-item" data-bs-interval="2000">
-                    <img src="..." class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                  </div>
+                    <img src="{{asset("img/" . $image)}}" class="d-block w-100" alt="...">
+                  </div>                      
+                  @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -74,7 +72,7 @@
                     <span>{{$product->price}} L.E</span>
                 </div>
                 <h3>Description :</h3>
-                <p class="lead">{{$product->description}}</p>
+                <p class="lead">{!!$product->description!!}</p>
             </div>
         </div>
     </div>

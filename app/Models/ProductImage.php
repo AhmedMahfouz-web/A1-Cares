@@ -10,6 +10,7 @@ use App\Models\Product;
 class ProductImage extends Model
 {
     use HasFactory;
+    protected $fillable = ['photo', 'product_id'];
 
     public function product()
     {

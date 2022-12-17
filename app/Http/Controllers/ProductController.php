@@ -50,7 +50,7 @@ class ProductController extends Controller
         //     'price' => 'numeric|min:1|max:9',
         // ]);
         $imageName = time().'.'.$request->photo->extension();  
-        $request->photo->store('/', 'public');
+        $request->photo->store('/img', 'public');
 
         $slug = strtolower(str_replace(' ', '-', $request->slug));
         $product = Product::create([
@@ -61,6 +61,16 @@ class ProductController extends Controller
             'photo' => $request->photo->hashName(),
             'price' => $request->price,
         ]);
+
+        // if($request->file('product_image')){
+        //     foreach ($request->file('product_image') as $image) {
+        //         $image->store('/img', 'public');
+        //         ProductImage::create([
+        //             'photo' => $image,
+        //             'product_id' => $product->id
+        //         ]);
+        //     };
+        // };
         return redirect('product/'.$slug); 
     }
 
