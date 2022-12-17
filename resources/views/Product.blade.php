@@ -3,7 +3,9 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('css/product.css')}}">
 <style>
-
+.carousel-indicators{
+  top: 100%;
+}
 
 .carousel-indicators  [data-bs-target]{
     width: 200px;

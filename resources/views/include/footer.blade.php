@@ -2,7 +2,7 @@
     <footer>
         <div class="footer">
         <div>
-            <img src="{{asset('img/a1-care-logo.png')}}" alt="A1-Cares">
+            <img src="{{asset('img/A1-Cares-White.png')}}" alt="A1-Cares">
             <p>Download the BinQasem app and get notifications when new actions start or there's any update yo your items.</p>
             <ul>
                 <li>For Quaries: info@androomeda.net</li>
