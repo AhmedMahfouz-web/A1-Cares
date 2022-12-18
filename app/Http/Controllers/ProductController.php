@@ -71,7 +71,7 @@ class ProductController extends Controller
                 ]);
             };
         };
-        return redirect('product/'.$slug); 
+        return redirect('/'.$slug); 
     }
 
     /**

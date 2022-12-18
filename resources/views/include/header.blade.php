@@ -7,8 +7,8 @@
 
         <div class="nav">
             <ul>
-                <li>About Us</li>
-                <li>Contac Us</li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#about">Contac Us</a></li>
             </ul>
             <div class="search">
                 <i class="ri-search-2-line"></i>

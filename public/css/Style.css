@@ -62,6 +62,11 @@ nav .nav ul li{
     margin: 10px;
 }
 
+nav .nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
 nav .nav .search{
     position: relative;
     width: fit-content;
@@ -128,6 +133,7 @@ footer{
 
 .footer img{
     max-width: 150px;
+    margin-bottom: 20px;
 }
 
 .footer{
@@ -171,7 +177,7 @@ footer{
 }
 
 .footer div p{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 }
@@ -246,7 +252,7 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
         background: rgb(49, 49, 49);
         padding: 20px 0 40px;
         gap: 30px;
@@ -329,7 +335,7 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
         padding: 20px 0 40px;
         gap: 30px;
         flex-wrap: wrap;
@@ -345,7 +351,7 @@ body{
     }
 
     .footer div p{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .footer div ul{

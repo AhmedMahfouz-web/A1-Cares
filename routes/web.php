@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/product/{slug}', [ProductController::class, 'index'])->name('product');
+Route::get('/{slug}', [ProductController::class, 'index'])->name('product');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {

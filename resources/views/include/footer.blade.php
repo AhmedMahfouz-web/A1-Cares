@@ -1,12 +1,12 @@
 
     <footer>
         <div class="footer">
-        <div>
+        <div id="about">
             <img src="{{asset('img/A1-Cares-White.png')}}" alt="A1-Cares">
-            <p>Download the BinQasem app and get notifications when new actions start or there's any update yo your items.</p>
+            <p>A1-Cares LTD
+                197 County Rd 731, Venus, FL 33960</p>
             <ul>
-                <li>For Quaries: info@androomeda.net</li>
-                <li>For call: 920012888</li>
+                <li><a href="http://www.a1-cares.com/">www.a1-cares.com</a></li>
             </ul>
 
         </div>
