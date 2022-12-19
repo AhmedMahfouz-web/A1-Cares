@@ -19,15 +19,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/{slug}', [ProductController::class, 'index'])->name('product');
+Route::get('/{slug}', [ProductController::class, 'show'])->name('product');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin/dashboard');
-    });
+    Route::get('/dashboard', [ProductController::class, 'index'])->name('dashboard');
 
     Route::get('/create', [ProductController::class, 'create'])->name('create');
     Route::post('/create', [ProductController::class, 'store'])->name('store');
+    Route::get('/edit/{slug}', [ProductController::class, 'edit'])->name('edit');
+    Route::post('/edit/{slug}', [ProductController::class, 'update'])->name('update');
 
     Route::controller(AuthController::class)->group(function(){
 
@@ -36,8 +36,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/logout', 'logout')->name('logout');
     
         Route::post('/validate_login', 'validate_login')->name('validate_login');
-    
-        Route::get('/dashboard', 'dashboard')->name('dashboard');
     
     });
     

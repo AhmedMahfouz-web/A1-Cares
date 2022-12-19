@@ -14,11 +14,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index()
     {
-        $product = Product::where('slug', $slug)->with('image')->get();
+        $products = Product::get();
 
-        return view('product')->with('product', $product);
+        return view('admin.dashboard')->with('products', $products);
     }
 
     /**
@@ -45,10 +45,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     // 'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        //     'price' => 'numeric|min:1|max:9',
-        // ]);
+        $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'price' => 'numeric|min:1',
+        ]);
         $imageName = time().'.'.$request->photo->extension();  
         $request->photo->store('/', 'public');
 
@@ -82,7 +82,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $product = Product::where('slug', $slug)->with('image')->get();
+
+        return view('product')->with('product', $product);
     }
 
     /**
@@ -91,9 +93,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($slug)
     {
-        //
+        
+        $product = Product::where('slug', $slug)->with('image')->first();
+
+        return view('admin.edit')->with('product', $product);
     }
 
     /**
@@ -103,7 +108,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $slug)
     {
         //
     }

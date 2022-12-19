@@ -11286,3 +11286,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+@media (max-width: 720px) {
+  .product-details{
+    margin-top: 120px;
+  }
+}
+
+.product-details{
+ align-self: start !important;
+}

@@ -14,7 +14,7 @@
                         class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                         <h3 class="fw-bold mb-0">Add New Product</h3>
                         <button type="submit" class="btn btn-primary btn-set-task w-sm-100 py-2 px-5 text-uppercase"
-                            form="new-product">Add</button>
+                            form="new-product">Save</button>
                     </div>
                 </div>
             </div> <!-- Row end  -->
@@ -22,7 +22,7 @@
             <div class="row g-6 mb-3">
                 <div class="col-12 col-12">
                     <div class="card mb-3">
-                        <form action="{{ route('store') }}" method="POST" class="form-horizontal"
+                        <form action="{{ route('update', $product->slug) }}" method="POST" class="form-horizontal"
                             id="new-product" enctype="multipart/form-data">
                             @csrf
                             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
@@ -40,23 +40,23 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" name="name" required>
+                                        <input type="text" class="form-control" name="name" value="{{$product->name}}" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Page Title</label>
-                                        <input type="text" class="form-control" name="page_title" required>
+                                        <input type="text" class="form-control" name="page_title" value="{{$product->page_title}}" required>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label">Product Identifier URL</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">https://a1-cares.com/</span>
-                                            <input type="text" class="form-control" name="slug" required>
+                                            <input type="text" class="form-control" name="slug" value="{{$product->slug}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label">Product Description</label>
                                         <textarea required name="description" class="form-control"
-                                            id="froala" ></textarea>
+                                            id="froala">{{$product->description}}</textarea>
                                             {{-- <div id="froala" name="description"></div> --}}
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                 <div class="col-md-12">
                                     <label class="form-label">Price</label>
                                     <div class="input-group mb-3">
-                                      <input type="number" class="form-control" name="price" required>
+                                      <input type="number" class="form-control" name="price" value="{{$product->price}}" required>
                                       <span class="input-group-text">$</span>
                                     </div>
                                     <div class="mb-3">

@@ -34,7 +34,7 @@
 @foreach ($product as $product)
     
 <section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
+    <div class="container px-4 px-lg-5 mb-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -67,11 +67,11 @@
                 </button>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 product-details">
                 <div class="small mb-1"></div>
                 <h1 class="display-5 fw-bolder">{{$product->name}}</h1>
                 <div class="fs-5 mb-5">
-                    <span>{{$product->price}} L.E</span>
+                    <span>{{$product->price}} $</span>
                 </div>
                 <h3>Description :</h3>
                 <p class="lead">{!!$product->description!!}</p>
