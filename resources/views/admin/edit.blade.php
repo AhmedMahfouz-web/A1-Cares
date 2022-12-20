@@ -12,9 +12,9 @@
                 <div class="border-0 mb-4">
                     <div
                         class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                        <h3 class="fw-bold mb-0">Add New Product</h3>
+                        <h3 class="fw-bold mb-0">Edit Product</h3>
                         <button type="submit" class="btn btn-primary btn-set-task w-sm-100 py-2 px-5 text-uppercase"
-                            form="new-product">Save</button>
+                            form="edit-product">Save</button>
                     </div>
                 </div>
             </div> <!-- Row end  -->
@@ -23,15 +23,16 @@
                 <div class="col-12 col-12">
                     <div class="card mb-3">
                         <form action="{{ route('update', $product->slug) }}" method="POST" class="form-horizontal"
-                            id="new-product" enctype="multipart/form-data">
+                            id="edit-product" enctype="multipart/form-data">
                             @csrf
                             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                                 <h6 class="mb-0 fw-bold ">Basic information</h6>
                             </div>
                             <div class="card-body">
                                 <div class="row g-3 align-items-center">
-                                    <div class="mb3">
-                                        <img src="{{asset('img/' . $product->photo)}}" alt="">
+                                    <div class="mb3 main-img">
+                                        <p>Main Image:</p>
+                                        <img class="d-block" src="{{asset('img/' . $product->photo)}}" alt="">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputImage">Image:</label>

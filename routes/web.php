@@ -22,12 +22,13 @@ Route::get('/', function () {
 Route::get('/{slug}', [ProductController::class, 'show'])->name('product');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', [ProductController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [ProductController::class, 'index'])->name('admindashboard');
 
     Route::get('/create', [ProductController::class, 'create'])->name('create');
     Route::post('/create', [ProductController::class, 'store'])->name('store');
     Route::get('/edit/{slug}', [ProductController::class, 'edit'])->name('edit');
     Route::post('/edit/{slug}', [ProductController::class, 'update'])->name('update');
+    Route::post('/destroy/{slug}', [ProductController::class, 'destroy'])->name('destroy');
 
     Route::controller(AuthController::class)->group(function(){
 

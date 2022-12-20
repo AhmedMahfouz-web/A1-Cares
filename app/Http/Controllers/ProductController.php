@@ -128,6 +128,16 @@ class ProductController extends Controller
             };
         };
 
+        $product->update([
+            'name' => $request->name,
+            'slug' => $slug,
+            'page_title' => $request->page_title,
+            'description' => $request->description,
+            'photo' => $main_photo,
+            'price' => $request->price,
+        ]);
+
+        return redirect(route('product', $product->slug));
     }
 
     /**
@@ -136,8 +146,18 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($slug)
     {
-        //
+        $product = Product::where('slug', $slug)->first();
+        $images = ProductImage::where('product_id', $product->id)->get();
+        unlink('img/'. $product->photo);
+        foreach($images as $image){
+            unlink('img/'. $image->photo);
+            $image->delete();
+        }
+
+        $product->delete();
+
+        return redirect(route('admindashboard'))->with('success', 'Deleted Successfully');
     }
 }

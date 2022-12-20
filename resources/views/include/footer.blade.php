@@ -11,30 +11,20 @@
 
         </div>
         <div>
-            <p class="head">Lorem Ipsum</p>
+            <p class="head">Contact Us</p>
             <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
+                <li>Phone: +1-202555-0129</li>
+                <li>Email: info@a1-cares.com</li>
+                <li>Address: A1-Cares LTD
+                    197 County Rd 731, Venus, FL 33960 </li>
             </ul>
         </div>
         <div>
-            <p class="head">Lorem Ipsum</p>
+            <p class="head">Products</p>
             <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </div>
-        <div>
-            <p class="head">Lorem Ipsum</p>
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
+                <li><a href="a1-cares.com/easyslim-fat-burner">Easyslim Fat Burner</a></li>
+                <li><a href="a1-cares.com/easyslim-slimming-capsules">Easyslim Slimming Capsules</a></li>
+                <li><a href="a1-cares.com/absonutrex-hoodia">Absonutrex Hoodia</a></li>
             </ul>
         </div>
     </div>
