@@ -11287,12 +11287,30 @@ textarea.form-control-lg {
   }
 }
 
+.d-block {
+  max-height: 600px;
+}
+
 @media (max-width: 720px) {
   .product-details{
     margin-top: 120px;
+  }
+  .d-block {
+    max-height: 600px;
   }
 }
 
 .product-details{
  align-self: start !important;
+}
+
+.orange{
+  color: #ed5323;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.orange-h4{
+  color: #ed5323;
+  font-weight: bolder;
 }

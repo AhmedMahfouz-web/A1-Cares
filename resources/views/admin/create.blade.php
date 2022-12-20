@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Page Title</label>
-                                        <input type="text" class="form-control" name="page_title" required>
+                                        <input type="text" class="form-control" name="page_title">
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label">Product Identifier URL</label>

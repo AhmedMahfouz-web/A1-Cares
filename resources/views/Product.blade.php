@@ -36,7 +36,7 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 mb-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="col-md-6 align-self-start"><div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
                     <img src="{{asset("img/" . $product->photo)}}" alt="">
@@ -67,13 +67,13 @@
                 </button>
               </div>
             </div>
-            <div class="col-md-6 product-details">
+            <div class="col-md-6 product-details ">
                 <div class="small mb-1"></div>
-                <h1 class="display-5 fw-bolder">{{$product->name}}</h1>
+                <h2 class="display-6 fw-bolder">{{$product->name}}</h2>
                 <div class="fs-5 mb-5">
-                    <span>{{$product->price}} $</span>
+                    <span class="orange">{{$product->price}} $</span>
                 </div>
-                <h3>Description :</h3>
+                <h5 class="orange-h4">Description :</h5>
                 <p class="lead">{!!$product->description!!}</p>
             </div>
         </div>

@@ -56,7 +56,7 @@ class ProductController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'slug' => $slug,
-            'page-title' => $request->page_title,
+            'page_title' => $request->page_title,
             'description' => $request->description,
             'photo' => $request->photo->hashName(),
             'price' => $request->price,
@@ -80,7 +80,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($slug)
     {
         $product = Product::where('slug', $slug)->with('image')->get();
 
@@ -110,7 +110,24 @@ class ProductController extends Controller
      */
     public function update(Request $request, $slug)
     {
-        //
+        $product = Product::where('slug', $slug)->with('image')->first();
+
+        $main_photo = $product->photo;
+        if($request->photo != null || $request->photo != ''){
+            $request->photo->store('/', 'public');
+            $main_photo = $request->photo->hashName();
+        }
+        
+        if($request->file('product_image')){
+            foreach ($request->product_image as $image) {
+                $image->store('/', 'public');
+                ProductImage::create([
+                    'photo' => $image->hashName(),
+                    'product_id' => $product->id
+                ]);
+            };
+        };
+
     }
 
     /**

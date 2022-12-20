@@ -30,6 +30,9 @@
                             </div>
                             <div class="card-body">
                                 <div class="row g-3 align-items-center">
+                                    <div class="mb3">
+                                        <img src="{{asset('img/' . $product->photo)}}" alt="">
+                                    </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputImage">Image:</label>
                                         <input type="file" name="photo" id="inputImage"
