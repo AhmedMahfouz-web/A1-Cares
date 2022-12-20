@@ -16,9 +16,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::get();
+        if(Auth::check())
+        {
+            $products = Product::get();
+    
+            return view('admin.dashboard')->with('products', $products);
+        }   
 
-        return view('admin.dashboard')->with('products', $products);
+        return redirect('admin/login')->with('success', 'you are not allowed to access');
     }
 
     /**
@@ -95,10 +100,15 @@ class ProductController extends Controller
      */
     public function edit($slug)
     {
+        if(Auth::check())
+        {
         
-        $product = Product::where('slug', $slug)->with('image')->first();
-
-        return view('admin.edit')->with('product', $product);
+            $product = Product::where('slug', $slug)->with('image')->first();
+    
+            return view('admin.edit')->with('product', $product);
+        }
+        
+        return redirect('admin/login')->with('success', 'you are not allowed to access');
     }
 
     /**

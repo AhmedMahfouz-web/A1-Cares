@@ -20,6 +20,7 @@
   </div>
 </div>
 <div class="container col-xl-9 mt-5">
+    <a href="{{route('create')}}" class="btn btn-primary">Create</a>
     <div class="row align-items-center">
 @foreach ($products as $index => $product)
         <div class="card m-3" style="width: 18rem;">

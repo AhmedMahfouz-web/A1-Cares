@@ -22,9 +22,9 @@
         <div>
             <p class="head">Products</p>
             <ul>
-                <li><a href="a1-cares.com/easyslim-fat-burner">Easyslim Fat Burner</a></li>
-                <li><a href="a1-cares.com/easyslim-slimming-capsules">Easyslim Slimming Capsules</a></li>
-                <li><a href="a1-cares.com/absonutrex-hoodia">Absonutrex Hoodia</a></li>
+                <li><a href="{{route('product', 'easyslim-fat-burner')}}">Easyslim Fat Burner</a></li>
+                <li><a href="{{route('product', 'easyslim-slimming-capsules')}}">Easyslim Slimming Capsules</a></li>
+                <li><a href="{{route('product', 'absonutrex-hoodia')}}">Absonutrex Hoodia</a></li>
             </ul>
         </div>
     </div>
