@@ -41,8 +41,8 @@
                   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
                     <img src="{{asset("img/" . $product->photo)}}" alt="">
                   </button>
-                  @foreach ($product->image as $image)
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2">
+                  @foreach ($product->image as $key => $image)
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$key + 1}}" aria-label="Slide 2">
                     <img src="{{asset("img/" . $image->photo)}}" alt="">
                   </button>
                   @endforeach
