@@ -42,7 +42,7 @@
                     <img src="{{asset("img/" . $product->photo)}}" alt="">
                   </button>
                   @foreach ($product->image as $key => $image)
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$key + 5}}" aria-label="Slide 2">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$key + 1}}" aria-label="Slide {{$key + 2}}">
                     <img src="{{asset("img/" . $image->photo)}}" alt="">
                   </button>
                   @endforeach
